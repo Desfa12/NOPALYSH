@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.centered-text {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 10%; /* Mengatur jarak teks dari atas */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #333;
+}
+
+.moving-square {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: moveLeftRight 4s infinite ease-in-out;
+}
+
+@keyframes moveLeftRight {
+  0% {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3498db;
+  }
+  25% {
+    left: calc(100% - 100px); /* Bergerak ke ujung kanan */
+    transform: translate(0, -50%);
+    background-color: #e74c3c;
+  }
+  50% {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f1c40f;
+  }
+  75% {
+    left: 0; /* Bergerak ke ujung kiri */
+    transform: translate(0, -50%);
+    background-color: #2ecc71;
+  }
+  100% {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3498db;
+  }
+}
